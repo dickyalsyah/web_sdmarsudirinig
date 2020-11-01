@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Assets/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="Assets/glide/glide.core.min.css">
     <link rel="stylesheet" href="Assets/glide/glide.theme.min.css">
-    <link rel="stylesheet" href="Assets/aos/aos.css" />
+    <link rel="stylesheet" href="Assets/aos/aos.css">
 </head>
 <body class="antialiased font-body bg-gray-200">
     <!-- Navbar -->
@@ -52,9 +52,9 @@
         </div>
     </header>
     <!-- Main Area -->
-    <main>
+    <main class="mr-0">
       <!-- Hero Section -->
-      <section class="cover relative bg-white flex justify-center content-center items-center overflow-hidden lg:h-screen hero">
+      <section class="cover relative overflow-x-hidden bg-white flex overflow-hidden justify-center content-center items-center lg:h-screen hero">
           <div class="glide absolute top-0 bg-top bg-cover">
               <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides w-screen h-screen">
@@ -70,7 +70,7 @@
                   </ul>
               </div>
           </div>
-          <span class="absolute inset-0 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
+          <span class="absolute w-auto inset-0 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
           <div class="container absolute mx-auto" data-aos="fade-up">
             <div class="items-center flex flex-wrap">
               <div class="w-full lg:w-9/12 px-4 md:px-2 lg:px-0 ml-auto mr-auto text-center">
@@ -160,7 +160,7 @@
       <!-- End of Card -->
 
       <!-- Start Icon -->
-      <section class="mt-2 mx-auto container mb-24 max-w-lg px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64">
+      <section class="overflow-x-hidden mt-2 mx-auto container mb-24 max-w-lg px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64">
           <div class="flex flex-col md:flex-row items-center justify-center text-lg font-semibold text-pri-100" data-aos="zoom-in">
             <div class="text-center px-10">
               <svg class="icon w-20 md:w-16">
@@ -207,7 +207,7 @@
               </div>
             </div>
 
-            <div class="flex py-12 flex-wrap justify-center -mx-2">
+            <div class="flex py-12 flex-wrap justify-center -mx-2 overflow-x-hidden">
               <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
                 <div class=" bg-white max-w-full shadow-xl rounded-md overflow-hidden relative">
                   <a href="#">
@@ -252,7 +252,7 @@
 
       <!-- Pengumuman -->
       <section class="container mx-auto w-10/12 lg:w-full lg:px-16 xl:px-40 2xl:px-64 py-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 overflow-x-hidden">
           <div class="bg-pri-100 md:col-span-2 shadow-xl text-white" data-aos="fade-down">
             <div class="flex flex-wrap lg:flex-no-wrap">
               <img class="h-56 lg:h-64 w-full lg:w-auto object-cover" src="https://img.freepik.com/free-vector/megaphone-announcement-with-paper-art-style_67590-497.jpg?size=626&ext=jpg" alt="">
@@ -290,6 +290,7 @@
             </div>
           </div>
         </div>
+        
       </section>
       <!-- End Pengumuman -->
     </main>

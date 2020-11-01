@@ -6,6 +6,7 @@
 
 .cover {
     border-bottom-left-radius: 130px;
+    border-collapse: collapse;
 }
 
 .bg-blue-teal-gradient {
