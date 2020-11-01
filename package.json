@@ -1,0 +1,17 @@
+{
+  "name": "App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build src/styles.css -o public/styles.css"
+  },
+  "keywords": [],
+  "author": "Dicky",
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "tailwindcss": "^1.9.6",
+    "tailwindcss-truncate-multiline": "^1.0.3"
+  }
+}
