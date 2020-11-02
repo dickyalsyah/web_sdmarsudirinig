@@ -22514,6 +22514,10 @@ video {
   border-bottom-left-radius: 130px;
 }
 
+.breadcumb {
+  height: 50vh;
+}
+
 .bg-blue-teal-gradient {
   background: rgb(49, 130, 206);
   background: linear-gradient(90deg, rgba(49, 130, 206, 0.7) 0%, rgba(56, 178, 172, 0.7) 100%);
@@ -22528,6 +22532,10 @@ video {
 @media (max-width: 1024px) {
   .hero {
     height: 75vh;
+  }
+
+  .breadcumb {
+    height: 35vh;
   }
 }
 

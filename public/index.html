@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="Assets/aos/aos.css">
   </head>
 
-  <body class="antialiased font-body bg-gray-200">
+  <body class="antialiased font-body bg-gray-100">
     <!-- Navbar -->
     <header class="fixed bg-transparent top-0 z-50 w-full text-white" id="navbar">
         <div x-data="{ open: false }" class="flex flex-col max-w-screen-2xl px-4 mx-auto md:px-8 lg:mx-10 lg:items-center lg:justify-between lg:flex-row lg:px-12 xl:px-16">
             <div class="relative flex flex-row items-center justify-between">
                 <div id="logo-nav" class="w-20 md:w-32 lg:w-24 xl:w-32 top-0 bg-white rounded-b-xl shadow-xl">
-                    <a href="#">
+                    <a href="index.html">
                         <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
                     </a>
                 </div>
@@ -30,7 +30,7 @@
                     </svg>
                 </button>
             </div>
-            <nav :class="{'flex': open, 'hidden': !open}" id="nav" class="hidden flex-col flex-grow bg-pri-100 py-2 lg:py-0 rounded-lg lg:shadow-none lg:bg-transparent lg:pb-0 lg:flex lg:justify-end lg:flex-row mt-2 lg:-mr-4 lg:mt-0 lg:mx-0 mx-1"> 
+            <nav :class="{'flex': open, 'hidden': !open}" id="nav" class="hidden flex-col flex-grow bg-pri-100 py-2 lg:py-0 rounded-lg lg:shadow-none lg:bg-transparent lg:pb-0 lg:flex lg:justify-end lg:flex-row mt-2 lg:-mr-4 lg:m-0 mb-4 mx-1"> 
               <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
                   <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
                       <span>Profil Sekolah</span>
@@ -46,7 +46,7 @@
                       </ul>
                   </div>
               </div>  
-              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Fasilitas</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">Fasilitas</a>
               <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
                 <button @click="open = !open" class="flex flex-row items-center mt-2 w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
                     <span>Akademik</span>
@@ -82,7 +82,7 @@
     <!-- Main Area -->
     <main>
       <!-- Hero Section -->
-      <section style="border-bottom-left-radius: 20% 30%;" class=" relative overflow-x-hidden bg-white flex overflow-hidden justify-center content-center items-center lg:h-screen hero">
+      <section class="cover relative overflow-x-hidden bg-white flex overflow-hidden justify-center content-center items-center lg:h-screen hero">
           <div class="glide absolute top-0 bg-top bg-cover">
               <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides w-screen h-screen">
@@ -449,37 +449,6 @@
         });
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>     
-    <script>
-      $(function () {
-      var navigation = $("#navbar");
-      var nav = $("#nav");
-      var logoShape = $("#logo-nav");
-      var imgLogo = $("#img-logo");
-      var subMenu = $("ul#sub-menu");
-  
-      $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll >= 20) {
-          navigation.addClass("bg-white shadow-md text-pri-100");
-          navigation.removeClass("text-white");
-          nav.removeClass("bg-pri-100 shadow-md")
-          logoShape.removeClass("bg-white shadow-xl");
-          imgLogo.addClass("w-16 py-2");
-          imgLogo.removeClass("w-auto p-2 lg:p-3");
-          subMenu.removeClass("bg-blue-800");
-          subMenu.addClass("text-pri-100");
-        } else {
-        navigation.addClass("text-white");
-        navigation.removeClass("bg-white xl:py-4 shadow-md text-pri-100");
-        nav.addClass("bg-pri-100 shadow-md")
-        imgLogo.removeClass("w-16 py-2");
-        imgLogo.addClass("w-auto p-2 lg:p-3");
-        logoShape.addClass("bg-white shadow-xl rounded-b-xl");
-        subMenu.addClass("bg-blue-800");
-        subMenu.removeClass("text-pri-100");
-        }
-        });
-      });
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
