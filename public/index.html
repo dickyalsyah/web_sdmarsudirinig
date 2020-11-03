@@ -16,90 +16,146 @@
   <body class="antialiased font-body bg-gray-100">
     <!-- Navbar -->
     <header class="fixed bg-transparent top-0 z-50 w-full text-white" id="navbar">
-        <div x-data="{ open: false }" class="flex flex-col max-w-screen-2xl px-4 mx-auto md:px-8 lg:mx-10 lg:items-center lg:justify-between lg:flex-row lg:px-12 xl:px-16">
-            <div class="relative flex flex-row items-center justify-between">
-                <div id="logo-nav" class="w-20 md:w-32 lg:w-24 xl:w-32 top-0 bg-white rounded-b-xl shadow-xl">
-                    <a href="index.html">
-                        <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
-                    </a>
-                </div>
-                <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <nav :class="{'flex': open, 'hidden': !open}" id="nav" class="hidden flex-col flex-grow bg-pri-100 py-2 lg:py-0 rounded-lg lg:shadow-none lg:bg-transparent lg:pb-0 lg:flex lg:justify-end lg:flex-row mt-2 lg:-mr-4 lg:m-0 mb-4 mx-1"> 
-              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
-                  <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
-                      <span>Profil Sekolah</span>
-                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </button>
-                  <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
-                      class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
-                      <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Sejarah</a></li>
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Visi & Misi</a></li>
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Mars Sekolah</a></li>
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Guru & Karyawan</a></li>
-                      </ul>
-                  </div>
-              </div>  
-              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">Fasilitas</a>
-              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
-                <button @click="open = !open" class="flex flex-row items-center mt-2 w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
-                    <span>Akademik</span>
+      <div class="container mx-auto max-w-screen-xl">
+        <div x-data="{ open: false }" class="flex flex-col px-4 md:px-8 xl:mx-10 lg:px-12 xl:px-16 lg:items-center lg:justify-between lg:flex-row">
+          <div class="relative flex flex-row items-center justify-between">
+              <div id="logo-nav" class="w-20 md:w-32 lg:w-24 xl:w-32 top-0 bg-white rounded-b-xl shadow-xl">
+                  <a href="index.html">
+                      <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
+                  </a>
+              </div>
+              <div id="nama-sekolah" class="hidden lg:relative xl:-ml-10 lg:-ml-2 text-left leading-tight absolute ml-20">
+                  <h1 class="tracking-widest text-md font-bold uppercase">SD Marsudirini</h1>
+                  <span class="text-md font-semibold">Gedangan Semarang</span>
+              </div>
+              <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                  <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                  <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                  <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+              </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}" id="nav" class="hidden flex-col flex-grow bg-pri-100 py-2 lg:py-0 rounded-lg lg:shadow-none lg:bg-transparent lg:pb-0 lg:flex lg:justify-end lg:flex-row mt-2 lg:-mr-4 lg:m-0 mb-4 mx-1"> 
+            <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                    <span>Profil Sekolah</span>
                     <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
                 <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
                     class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
                     <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
-                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Kurikulum</a></li>
-                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Materi Pelajaran</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Sejarah</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Visi & Misi</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Mars Sekolah</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Guru & Karyawan</a></li>
                     </ul>
                 </div>
-              </div>  
-              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
-                  <button @click="open = !open" class="flex flex-row items-center w-full mt-2 px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
-                      <span>Kegiatan</span>
-                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </button>
-                  <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
-                      class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
-                      <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Ekstrakurikuler</a></li>
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Retret</a></li>
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Outing Class</a></li>
-                      </ul>
-                  </div>
-              </div>  
-              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">PSB</a>
-              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Alumni</a>
-            </nav>
+            </div>  
+            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">Fasilitas</a>
+            <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+              <button @click="open = !open" class="flex flex-row items-center mt-2 w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                  <span>Akademik</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+              <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                  class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                  <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+                    <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Kurikulum</a></li>
+                    <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Materi Pelajaran</a></li>
+                  </ul>
+              </div>
+            </div>  
+            <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full mt-2 px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                    <span>Kegiatan</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                    class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                    <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Ekstrakurikuler</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Retret</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Outing Class</a></li>
+                    </ul>
+                </div>
+            </div>  
+            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">PSB</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Alumni</a>
+          </nav>
         </div>
+      </div>
     </header>
+    <!-- End Navbar -->
+
     <!-- Main Area -->
     <main>
       <!-- Hero Section -->
-      <section class="cover relative overflow-x-hidden bg-white flex overflow-hidden justify-center content-center items-center lg:h-screen hero">
-          <div class="glide absolute top-0 bg-top bg-cover">
+      <section class="cover relative overflow-x-hidden bg-white flex overflow-hidden justify-center content-center items-center h-screen hero">
+        <div class="glide absolute top-0 bg-top bg-cover">
               <div class="glide__track" data-glide-el="track">
-                  <ul class="glide__slides w-screen h-screen">
-                      <li class="glide__slide">
-                          <img class="object-cover w-full h-full" src="Assets/img/Hero1.jpg" alt="">
-                      </li>
-                      <li class="glide__slide">
-                          <img class="object-cover w-full h-full" src="Assets/img/Hero2.jpg" alt="">
-                      </li>
-                      <li class="glide__slide">
-                          <img class="object-cover w-full h-full" src="Assets/img/Hero3.jpg" alt="">
-                      </li>
-                  </ul>
+                  <div class="glide__slides">
+                    <div class="glide__slide">
+                      <span class="absolute w-auto inset-0 bg-gradient-to-b from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
+                      <a href="#">
+                          <div class="glide__inner w-full flex justify-center items-center overflow-x-hidden">
+                            <img class="object-cover w-full h-screen" src="Assets/img/Hero1.jpg" alt="">
+                            <div class="glide__tittle max-w-lg absolute lg:max-w-6xl -mt-24 flex flex-wrap ">
+                              <div class="px-4 md:px-2 lg:px-0 mx-auto text-center" data-aos="fade-up">
+                                <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                                  class="hover:text-pri-100 font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight">Learning from Nothing to Something</h1>
+                              </div>
+                            </div>                        
+                          </div>
+                        </a>
+                      </div>
+                      
+                      <div class="glide__slide">
+                        <a href="#">
+                          <div class="glide__inner flex justify-center items-center">
+                            <img class="object-cover w-full h-screen" src="Assets/img/Hero3.jpg" alt="">
+                            <div class="glide__tittle max-w-lg absolute lg:max-w-6xl -mt-24 flex flex-wrap">
+                              <div class="px-4 md:px-2 lg:px-0 mx-auto text-center">
+                                <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                                  class="hover:text-pri-100 font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight">Learning from Nothing to</h1>
+                              </div>
+                            </div>                        
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="glide__slide flex justify-center items-center">
+                        <a href="#">
+                          <div class="glide__inner w-full flex justify-center items-center overflow-x-hidden">
+                            <img class="object-cover w-full h-screen" src="Assets/img/Hero2.jpg" alt="">
+                            <div class="glide__tittle absolute max-w-lg lg:max-w-6xl -mt-24 flex flex-wrap">
+                              <div class="px-4 md:px-2 lg:px-0 mx-auto text-center">
+                                <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                                  class="hover:text-pri-100 font-bold text-white text-4xl md:text-5xl lg:text-6xl leading-tight">Perayaan HUT 150 Tahun Marsudirini</h1>
+                              </div>
+                            </div>                        
+                          </div>
+                        </a>
+                      </div>
+
+                    </div>
               </div>
+              <div class="flex justify-center items-center">
+              <div style="bottom: 20%;" class="mb-16 pb-2 lg:p-0 lg:mb-0 mx-auto opacity-75 absolute z-20 block uppercase overflow-hidden" data-glide-el="controls">
+                <button class="hover:bg-white text-white hover:text-pri-100 bg-pri-100 glide__arrow--left rounded-full mx-3 lg:mx-6  w-10 h-10 cursor-pointer focus:outline-none" data-glide-dir="<">
+                  <span>
+                    <i class="fas fa-chevron-left "></i>
+                  </span>
+                </button>
+                <button class="my-auto hover:bg-white text-white hover:text-pri-100 bg-pri-100 glide__arrow--right rounded-full mx-3 lg:mx-6  w-10 h-10 cursor-pointer focus:outline-none" data-glide-dir=">">
+                  <span>
+                    <i class="fas fa-chevron-right "></i>
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
-          <span class="absolute w-auto inset-0 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
-          <div class="container absolute mx-auto" data-aos="fade-up">
+          <!-- <span style="mix-blend-mode: multiply;" class="absolute w-auto inset-0 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span> -->
+          <!-- <div class="container absolute mx-auto" data-aos="fade-in">
             <div class="items-center flex flex-wrap">
               <div class="w-full lg:w-9/12 px-4 md:px-2 lg:px-0 ml-auto mr-auto text-center">
                 <div>
@@ -110,7 +166,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
       </section> 
       <!-- End of Hero -->
 
@@ -185,9 +241,9 @@
           </div>
         </div>     
       </section>
-      <!-- End of Card -->
+      <!-- End Card -->
 
-      <!-- Start Icon -->
+      <!-- Icon -->
       <section class="overflow-x-hidden mt-2 mx-auto container mb-24 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64">
           <div class="flex flex-col md:flex-row items-center justify-center text-lg font-semibold text-pri-100" data-aos="zoom-in">
             <div class="text-center lg:px-10 md:px-5">
@@ -225,9 +281,9 @@
       </section>
       <!-- End Icon -->
 
-      <!-- Start Kegiatan -->
+      <!-- Kegiatan -->
         <section class="bg-white px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 py-24">
-          <div class="max-w-6xl mx-auto">
+          <div class="mx-auto container max-w-screen-xl">
             <div class="flex flex-row justify-center">
               <div class="">
                 <h3 class="mb-4 text-pri-100 text-xl font-bold">Gallery Sekolah</h3>
@@ -236,7 +292,7 @@
             </div>
 
             <div class="flex py-12 flex-wrap justify-center -mx-2 overflow-x-hidden">
-              <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
+              <div class="max-w-sm lg:max-w-xl sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
                 <div class=" bg-white max-w-full shadow-xl rounded-md overflow-hidden relative">
                   <a href="#">
                   <span class="absolute inset-0 hover:opacity-0 opacity-50 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 cursor-pointer"></span>
@@ -247,7 +303,7 @@
                   <h5 class="text-lg text-gray-900 font-semibold">Praktek IPA</h5>
                 </div>
               </div>
-              <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
+              <div class="max-w-sm lg:max-w-xl sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
                 <div class=" bg-white max-w-full shadow-xl rounded-md overflow-hidden relative">
                   <a href="#">
                   <span class="absolute inset-0 hover:opacity-0 opacity-50 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 cursor-pointer"></span>
@@ -258,7 +314,7 @@
                   <h5 class="text-lg text-gray-900 font-semibold">Menanam Pohon</h5>
                 </div>
               </div>
-              <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
+              <div class="max-w-sm lg:max-w-xl sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
                 <div class=" bg-white max-w-full shadow-xl rounded-md overflow-hidden relative">
                   <a href="#">
                   <span class="absolute inset-0 hover:opacity-0 opacity-50 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 cursor-pointer"></span>
@@ -324,8 +380,8 @@
     </main>
 
     <!-- Start Footer -->
-    <footer class="relative bg-pri-100 text-white text-md lg:text-sm px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 pt-16 pb-10">
-      <div class="flex flex-col sm:flex-row sm:flex-wrap justify-between pl-4 lg:pl-0 lg:pr-0">
+    <footer class="relative bg-pri-100 text-white text-md lg:text-sm px-4 sm:px-8 lg:px-12 xl:px-40 pt-16 pb-10">
+      <div class="container mx-auto max-screen-xl flex flex-col sm:flex-row sm:flex-wrap justify-between pl-4 lg:px-0">
           <div class="sm:w-1/2 lg:w-1/5">
               <h5 class="uppercase tracking-wider font-semibold">Profil Sekolah</h5>
               <ul class="mt-4">
@@ -424,7 +480,7 @@
       <div class="mt-16">
           <hr class="mb-8">
           <p class="text-center text-sm text-white opacity-50">2020 © Website by Team 5 BINUS. All rights reserved.</p>
-        </div>
+      </div>
     </footer>
     <!-- end footer -->
 
