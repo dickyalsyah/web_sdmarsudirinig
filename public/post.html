@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SD Marsudirini Gedangan</title>
+    <link rel="shortcut icon" href="Assets/img/logo.png" type="image/x-icon">
+    <link rel="icon" href="Assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Assets/fontawesome-free/css/all.min.css">
+</head>
+<body class="antialiased bg-white font-body">
+    <!-- Navbar -->
+    <header class="fixed bg-transparent top-0 z-50 w-full text-white" id="navbar">
+        <div class="container mx-auto max-w-screen-xl">
+          <div x-data="{ open: false }" class="flex flex-col px-4 md:px-8 xl:mx-10 lg:px-12 xl:px-16 lg:items-center lg:justify-between lg:flex-row">
+            <div class="relative flex flex-row items-center justify-between">
+                <div id="logo-nav" class="w-24 md:w-32 top-0 bg-white rounded-b-xl shadow-xl">
+                    <a href="index.html">
+                        <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
+                    </a>
+                </div>
+                <div id="nama-sekolah" class="hidden lg:relative xl:-ml-10 lg:-ml-2 text-left leading-tight absolute ml-20">
+                    <h1 class="tracking-wider lg:tracking-wider text-md font-bold uppercase">SD Marsudirini</h1>
+                    <span class="text-sm lg:text-md font-semibold">Gedangan Semarang</span>
+                </div>
+                <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" id="nav" class="hidden flex-col flex-grow bg-pri-100 py-2 lg:py-0 rounded-lg lg:shadow-none lg:bg-transparent lg:pb-0 lg:flex lg:justify-end lg:flex-row mt-2 lg:-mr-4 lg:m-0 mb-4 mx-1"> 
+                <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                  <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                      <span>Profil Sekolah</span>
+                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                      class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                      <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Sejarah</a></li>
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Visi & Misi</a></li>
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Mars Sekolah</a></li>
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Guru & Karyawan</a></li>
+                      </ul>
+                  </div>
+              </div>  
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="gallery.html">Fasilitas</a>
+              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center mt-2 w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                    <span>Akademik</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                    class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                    <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Kurikulum</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Materi Pelajaran</a></li>
+                    </ul>
+                </div>
+              </div>  
+              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                  <button @click="open = !open" class="flex flex-row items-center w-full mt-2 px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                      <span>Kegiatan</span>
+                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                      class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                      <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Ekstrakurikuler</a></li>
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Retret</a></li>
+                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Outing Class</a></li>
+                      </ul>
+                  </div>
+              </div>  
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">PSB</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Alumni</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+    <!-- End Navbar -->
+
+    <main>
+    <!-- Breadcumb Section -->
+        <section style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); transform: translateZ(-1px); overflow:hidden"
+            class="breadcumb relative bg-blue-500 bg-center lg:bg-fixed bg-cover bg-no-repeat overflow-x-hidden flex justify-center items-center">
+            <span class="absolute w-auto inset-0 shadow-inner bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
+            <div class="container absolute my-auto flex flex-wrap justify-center">
+                    <div class="w-full mx-auto lg:px-16 xl:px-40 2xl:px-64" data-aos="fade-up">
+                        <h1 class="text-white font-bold text-center text-4xl lg:text-5xl lg:mt-10 leading-tight">
+                            Fasilitas
+                        </h1>
+                        <hr class="mt-2 pt-1 lg:mt-4 w-16 bg-white mx-auto">
+                    </div>
+            </div>
+        </section> 
+    <!-- End of Breadcumb -->
+
+        <section class="container relative mx-auto bg-white lg:flex flex-wrap xl:py-20 md:py-12">
+            <div class="flex justify-center mx-5 lg:hidden">
+                <div class="bg-white w-full h-64 md:-mt-32 sm:-mt-32 -mt-20"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 text-base px-10 md:px-12 lg:px-12 xl:ml-16 -mt-56 lg:mt-0">
+                <div class="w-full grid col-span-2 xl:-mt-56 xl:bg-white -mt-2">
+                    <article class="flex flex-col xl:pt-10 xl:px-10 w-full">
+                        <div class="md:bg-white flex flex-col justify-start">
+                            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 pb-4 capitalize">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</h1>
+                            <div class="flex text-sm text-gray-700 pb-3">
+                            <span>
+                                <i class="far fa-calendar-alt"></i>
+                                </span>
+                                <span class="ml-3 capitalize">
+                                <p>November 22, 2020</p>
+                                </span>
+                            </div>
+                            <!-- <p href="#" class="text-sm pb-3  text-gray-800">
+                                Published on April 25th, 2020
+                            </p> -->
+                            <nav class="pb-5">
+                                <ul class="flex items-center text-sm flex-wrap">
+                                    <li class="pb-1">
+                                        <a href="#" class="text-pri-100 hover:text-pri-200 font-semibold md:font-bold pb-4 capitalize">Home</a>
+                                        <span class="px-2">
+                                        <i style="font-size: 10px;" class="fas fa-chevron-right text-gray-500"></i>
+                                        </span>
+                                    </li>
+                                    <li class="pb-1">
+                                        <a href="#" class="text-pri-100 hover:text-pri-200 font-semibold md:font-bold pb-4 capitalize">Event</a>
+                                        <span class="px-2">
+                                        <i style="font-size: 10px;" class="fas fa-chevron-right text-sm text-gray-500"></i>
+                                        </span>
+                                    </li>
+                                    <li class="pb-1">
+                                        <p class="text-gray-500 capitalize">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</p>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <img class="pb-8" src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+                            <h1 class="text-2xl font-bold pb-3">Introduction</h1>
+                            <p class="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel neque non libero suscipit suscipit eu eu urna. Proin bibendum urna mattis ante malesuada ultrices. Etiam in turpis vitae elit dictum aliquet. Donec mattis risus in turpis dapibus, eget tempus sem tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In est enim, imperdiet sed ornare quis, pellentesque vel risus. Nunc vitae vestibulum turpis. Quisque eget eleifend urna. Etiam et vulputate purus, ut egestas sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis quis neque non urna venenatis mollis et at massa. Pellentesque sem lacus, malesuada vel hendrerit molestie, mollis vel elit.</p>
+                        </div>
+        
+                    </article>
+                    <div class="xl:pl-10 xl:pr-6">
+                    <div class="w-full flex pt-6 xl:pr-6">
+                        <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-left p-6">
+                            <p class="text-lg text-pri-100 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i> Previous</p>
+                            <p class="pt-2 text-sm capitalize">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</p>
+                        </a>
+                        <a href="#" class="w-1/2 bg-white shadow hover:shadow-md text-right p-6">
+                            <p class="text-lg text-pri-100 font-bold flex items-center justify-end">Next <i class="fas fa-arrow-right pl-1"></i></p>
+                            <p class="pt-2 text-sm capitalize">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</p>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                <div class="xl:mr-32 pb-16">
+                    <div class="w-full bg-white flex flex-col my-2 lg:my-10 xl:my-4 xl:pl-3 lg:pl-10">
+                        <hr class="border-1 my-10 lg:hidden">
+                        <div class="relative flex items-center mb-5">
+                            <input type="search" placeholder="Search" class="bg-white h-10 w-full px-5 pr-10 border-2 rounded-full text-sm focus:outline-none focus:shadow-sm">
+                            <button type="submit" class="absolute right-0 mr-6 focus:outline-none">
+                                <i class="fas fa-search opacity-25 text-sm"></i>
+                            </button>
+                        </div>
+                        <div class="pt-5 flex flex-col justify-start">
+                            <h3 class="pb-2 text-sm font-semibold text-pri-100 capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3>
+                            <p class="text-sm text-gray-600 truncate-3-lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                            <hr class="border-1 mt-5 block">
+                        </div>
+                        <div class="pt-5 flex flex-col justify-start">
+                            <h3 class="pb-2 text-sm font-semibold text-pri-100 capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3>
+                            <p class="text-sm text-gray-600 truncate-3-lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                            <hr class="border-1 mt-5 block">
+                        </div>
+                        <div class="pt-5 flex flex-col justify-start">
+                            <h3 class="pb-2 text-sm font-semibold text-pri-100 capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3>
+                            <p class="text-sm text-gray-600 truncate-3-lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                            <hr class="border-1 mt-5 block">
+                        </div>
+
+                        <div class="pt-8 text-sm">
+                            <h2 class="font-semibold text-pri-100">Category</h2>
+                            <ul class="pt-3 text-gray-600 text-left">
+                                <li class="pt-2">
+                                    <a class="hover:text-gray-800" href="">
+                                        <span>
+                                            <i class="fas fa-tag"></i>
+                                        </span>
+                                        <span class="ml-2 capitalize">Pengumuman</span>
+                                    </a>
+                                </li>
+                                <li class="pt-2">
+                                    <a class="hover:text-gray-800" href="">
+                                        <span>
+                                            <i class="fas fa-tag"></i>
+                                        </span>
+                                        <span class="ml-2 capitalize">Event</span>
+                                    </a>
+                                </li>
+                                <li class="pt-2">
+                                    <a class="hover:text-gray-800" href="">
+                                        <span>
+                                            <i class="fas fa-tag"></i>
+                                        </span>
+                                        <span class="ml-2 capitalize">Berita Sekolah</span>
+                                    </a>
+                                </li>
+                                <li class="pt-2">
+                                    <a class="hover:text-gray-800" href="">
+                                        <span>
+                                            <i class="fas fa-tag"></i>
+                                        </span>
+                                        <span class="ml-2 capitalize">Artikel</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </section>      
+    </main>
+
+    <!-- Start Footer -->
+    <footer class="relative bg-pri-100 text-white text-md lg:text-sm px-4 sm:px-8 lg:px-12 xl:px-40 pt-16 pb-10">
+        <div class="container mx-auto max-w-screen-xl flex flex-col sm:flex-row sm:flex-wrap justify-between pl-4 lg:px-0">
+            <div class="sm:w-1/2 lg:w-1/5">
+                <h5 class="uppercase tracking-wider font-semibold">Profil Sekolah</h5>
+                <ul class="mt-4">
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Sejarah</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Visi & Misi</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Mars Lagu Sekolah</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Guru & Karyawan</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Fasilitas</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Kegiatan Sekolah</a></li>
+                </ul>
+            </div>
+  
+            <div class="w-full mt-8 sm:w-1/2 sm:mt-0 lg:w-1/5 lg:mt-0">
+                <h5 class="uppercase tracking-wider font-semibold">Useful Link</h5>
+                <ul class="mt-4">
+                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Pendaftaran Siswa Baru</a></li>
+                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Kurikulum</a></li>
+                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Kalender Kegiatan</a></li>
+                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Alumni</a></li>
+                </ul>
+            </div>
+  
+            <div class="w-full mt-8 sm:w-1/2 sm:mt-12 lg:w-1/5 lg:mt-0 lg:-ml-8">
+                <h5 class="uppercase tracking-wider font-semibold">Contact Details</h5>
+                <ul class="mt-4">
+                    <li>
+                        <a href="https://goo.gl/maps/oCCLtZLgGA2zbm5G8" title="Alamat" target="_blank" class="flex items-start opacity-75 hover:opacity-100">
+                        <span>
+                            <i class="fas fa-map-marker-alt text-lg"></i>
+                        </span>
+                        <span class="ml-3">
+                            Jl. Ronggowarsito No.08 Semarang <br> Jawa Tengah
+                        </span>
+                        </a>
+                    </li>
+                    <li class="mt-4">
+                        <a href="tel:+62-24-3563065" title="Phone" class="flex items-center opacity-75 hover:opacity-100">
+                        <span>
+                            <i class="fas fa-phone-alt text-lg"></i>
+                        </span>
+                        <span class="ml-3">
+                            (024) 356-3065
+                        </span>
+                        </a>
+                    </li>
+                    <li class="mt-4">
+                        <div class="flex items-center opacity-75 hover:opacity-100">
+                        <span>
+                          <i class="fas fa-fax text-lg"></i>
+                        </span>
+                        <span class="ml-3">
+                            (024) 355-8695
+                        </span>
+                      </div>
+                    </li>
+                    <li class="mt-4">
+                        <a href="mailto:cs@sdmarsudirini.sch.id" title="email" target="_blank" class="flex items-center opacity-75 hover:opacity-100">
+                        <span>
+                          <i class="fas fa-envelope text-lg"></i>
+                        </span>
+                        <span class="ml-3">
+                            cs@sdmarsudirini.sch.id
+                        </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+  
+            <div class="w-full mt-8 sm:w-1/2 sm:mt-12 lg:w-1/5 lg:mt-0 -ml-2 lg:ml-0">
+                <div class="grid justify-center md:justify-start lg:justify-center grid-col-1 lg:-mr-8">
+                    <div class=""><img class="w-40 lg:w-32" src="assets/img/logo.png" alt=""></div>
+                    <div class="flex justify-center px-0">
+                        <ul class="mt-8 flex">
+                            <li>
+                                <a href="#" target="_blank" title="">
+                                  <i class="flex fab fa-facebook text-2xl hover:text-pri-200"></i>
+                                </a>
+                            </li>
+                
+                            <li class="ml-6">
+                              <a href="#" target="_blank" title="">
+                                <i class="flex fab fa-instagram text-2xl hover:text-pri-200"></i>
+                              </a>
+                            </li>
+  
+                            <li class="ml-6">
+                                <a href="https://www.youtube.com/channel/UCIPeGDRLls32PhqBGxfbHng" target="_blank" title="Official Youtube">
+                                  <i class="flex fab fa-youtube text-2xl hover:text-pri-200"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16">
+            <hr class="mb-8">
+            <p class="text-center text-sm text-white opacity-50">2020 © Website by Team 5 BINUS. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>     
+    <script src="main.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ $(function () {
         if (scroll >= 20) {
         navigation.addClass("bg-white shadow-md text-pri-100");
         navigation.removeClass("text-white");
-        nav.removeClass("bg-pri-100 shadow-md")
+        nav.removeClass("bg-pri-100")
         logoShape.removeClass("bg-white shadow-xl");
         imgLogo.addClass("w-16 py-2");
         imgLogo.removeClass("w-auto p-2 lg:p-3");
@@ -21,8 +21,8 @@ $(function () {
         namaSekolah.removeClass("hidden")
         } else {
         navigation.addClass("text-white");
-        navigation.removeClass("bg-white xl:py-4 shadow-md text-pri-100");
-        nav.addClass("bg-pri-100 shadow-md")
+        navigation.removeClass("bg-white shadow-md text-pri-100");
+        nav.addClass("bg-pri-100")
         imgLogo.removeClass("w-16 py-2");
         imgLogo.addClass("w-auto p-2 lg:p-3");
         logoShape.addClass("bg-white shadow-xl rounded-b-xl");

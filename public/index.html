@@ -19,7 +19,7 @@
       <div class="container mx-auto max-w-screen-xl">
         <div x-data="{ open: false }" class="flex flex-col px-4 md:px-8 xl:mx-10 lg:px-12 xl:px-16 lg:items-center lg:justify-between lg:flex-row">
           <div class="relative flex flex-row items-center justify-between">
-              <div id="logo-nav" class="w-20 md:w-32 lg:w-24 xl:w-32 top-0 bg-white rounded-b-xl shadow-xl">
+              <div id="logo-nav" class="w-24 md:w-32 top-0 bg-white rounded-b-xl shadow-xl">
                   <a href="index.html">
                       <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
                   </a>
@@ -51,7 +51,7 @@
                     </ul>
                 </div>
             </div>  
-            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">Fasilitas</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="gallery.html">Fasilitas</a>
             <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
               <button @click="open = !open" class="flex flex-row items-center mt-2 w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
                   <span>Akademik</span>
@@ -79,7 +79,7 @@
                     </ul>
                 </div>
             </div>  
-            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">PSB</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">PSB</a>
             <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Alumni</a>
           </nav>
         </div>
@@ -93,51 +93,48 @@
       <section class="cover relative overflow-x-hidden bg-white flex overflow-hidden justify-center content-center items-center h-screen hero">
         <div class="glide absolute top-0 bg-top bg-cover">
               <div class="glide__track" data-glide-el="track">
-                  <div class="glide__slides">
-                    <div class="glide__slide">
-                      <span class="absolute w-auto inset-0 bg-gradient-to-b from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
-                      <a href="#">
-                          <div class="glide__inner w-full flex justify-center items-center overflow-x-hidden">
-                            <img class="object-cover w-full h-screen" src="Assets/img/Hero1.jpg" alt="">
-                            <div class="glide__tittle max-w-sm absolute lg:max-w-4xl xl:max-w-6xl md:-mt-16 lg:-mt-24 flex flex-wrap ">
-                              <div class="px-4 md:px-2 lg:px-0 mx-auto text-center" data-aos="fade-up">
-                                <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-                                  class="hover:text-pri-100 font-bold text-white text-4xl xl:text-6xl leading-tight">Learning from Nothing to Something</h1>
-                              </div>
-                            </div>                        
+                <div class="glide__slides">
+                  <div class="glide__slide">
+                    <span class="absolute w-auto inset-0 bg-gradient-to-b from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
+                    <a href="post.html">
+                      <div class="glide__inner w-full flex justify-center items-center overflow-x-hidden">
+                        <img class="object-cover w-full h-screen" src="Assets/img/Hero1.jpg" alt="">
+                        <div class="glide__tittle max-w-sm absolute md:max-w-md lg:max-w-4xl xl:max-w-6xl -mt-12 md:-mt-16 lg:-mt-24 flex flex-wrap ">
+                          <div class="px-4 md:px-2 lg:px-0 mx-auto text-center" data-aos="fade-up">
+                            <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                              class="capitalize hover:text-pri-100 font-bold text-white text-4xl md:text-5xl xl:text-6xl leading-tight">Learning from Nothing to Something</h1>
                           </div>
-                        </a>
+                        </div>                        
                       </div>
-                      
-                      <div class="glide__slide">
-                        <a href="#">
-                          <div class="glide__inner flex justify-center items-center">
-                            <img class="object-cover w-full h-screen" src="Assets/img/Hero3.jpg" alt="">
-                            <div class="glide__tittle max-w-sm absolute lg:max-w-4xl xl:max-w-6xl md:-mt-16 lg:-mt-24 flex flex-wrap">
-                              <div class="px-4 md:px-2 lg:px-0 mx-auto text-center">
-                                <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-                                  class="hover:text-pri-100 font-bold text-white text-4xl xl:text-6xl leading-tight">Lomba Literasi Tahun Pelajaran 2020/2021</h1>
-                              </div>
-                            </div>                        
+                    </a>
+                  </div>
+                  <div class="glide__slide">
+                    <a href="post.html">
+                      <div class="glide__inner flex justify-center items-center">
+                        <img class="object-cover w-full h-screen" src="Assets/img/Hero3.jpg" alt="">
+                        <div class="glide__tittle max-w-sm absolute md:max-w-md lg:max-w-4xl xl:max-w-6xl -mt-12 md:-mt-16 lg:-mt-24 flex flex-wrap">
+                          <div class="px-4 md:px-2 lg:px-0 mx-auto text-center">
+                            <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                              class="capitalize hover:text-pri-100 font-bold text-white text-4xl md:text-5xl xl:text-6xl leading-tight">Lomba Literasi Tahun Pelajaran 2020/2021</h1>
                           </div>
-                        </a>
+                        </div>                        
                       </div>
-
-                      <div class="glide__slide flex justify-center items-center">
-                        <a href="#">
-                          <div class="glide__inner w-full flex justify-center items-center overflow-x-hidden">
-                            <img class="object-cover w-full h-screen" src="Assets/img/Hero2.jpg" alt="">
-                            <div class="glide__tittle absolute max-w-sm lg:max-w-4xl xl:max-w-6xl md:-mt-16 lg:-mt-24 flex flex-wrap">
-                              <div class="px-4 md:px-2 lg:px-0 mx-auto text-center">
-                                <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-                                  class="hover:text-pri-100 font-bold text-white text-4xl xl:text-6xl leading-tight">Perayaan HUT 150 Tahun Marsudirini</h1>
-                              </div>
-                            </div>                        
+                    </a>
+                  </div>
+                  <div class="glide__slide">
+                    <a href="post.html">
+                      <div class="glide__inner w-full flex justify-center items-center overflow-x-hidden">
+                        <img class="object-cover w-full h-screen" src="Assets/img/Hero2.jpg" alt="">
+                        <div class="glide__tittle absolute max-w-sm md:max-w-md lg:max-w-4xl xl:max-w-6xl -mt-12 md:-mt-16 lg:-mt-24 flex flex-wrap">
+                          <div class="px-4 md:px-2 lg:px-0 mx-auto text-center">
+                            <h1 style="text-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+                              class="capitalize hover:text-pri-100 font-bold text-white text-4xl md:text-5xl xl:text-6xl leading-tight">Perayaan HUT 150 Tahun Marsudirini</h1>
                           </div>
-                        </a>
+                        </div>                        
                       </div>
-
-                    </div>
+                    </a>
+                  </div>
+                </div>
               </div>
               <div class="flex justify-center items-center">
               <div style="bottom: 20%;" class="mb-16 pb-2 lg: pb-4xl:p-0 xl:mb-0 mx-auto opacity-75 absolute z-20 block uppercase overflow-hidden" data-glide-el="controls">
@@ -154,19 +151,6 @@
               </div>
             </div>
           </div>
-          <!-- <span style="mix-blend-mode: multiply;" class="absolute w-auto inset-0 bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span> -->
-          <!-- <div class="container absolute mx-auto" data-aos="fade-in">
-            <div class="items-center flex flex-wrap">
-              <div class="w-full lg:w-9/12 px-4 md:px-2 lg:px-0 ml-auto mr-auto text-center">
-                <div>
-                  <h1 class="text-white font-bold text-4xl md:text-5xl lg:text-6xl leading-tight">
-                    Learning from Nothing to <span class="text-pri-100">Something</span>
-                  </h1>
-                  <a href="#" class="bg-transparent hover:bg-pri-100 text-pri-100 font-semibold hover:text-white p-4 border border-pri-100 hover:border-transparent rounded inline-block mt-5 cursor-pointer">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
       </section> 
       <!-- End of Hero -->
 
@@ -177,24 +161,28 @@
             <div class="flex relative flex-shrink-0 min-w-0 break-words bg-white w-full mb-8 shadow-lg ">
               <div class="p-8 flex-auto">
                 <div class="mb-4 md:mb-6 h-42 lg:h-48 xl:h-56 w-auto overflow-hidden">
-                    <img class="relative object-cover object-top w-full h-full" src="Assets/img/Ketua_Yayasan.png" alt="">
+                  <img class="relative object-cover object-top w-full h-full" src="Assets/img/Ketua_Yayasan.png" alt="">
                 </div>
-                <h6 class="mt-6 lg:mt-0 text-lg lg:text-xl text-pri-100 font-semibold">Selamat Datang di Sekolah Kami</h6>
-                  <p class="mt-2 mb-4 text-gray-700 text-sm truncate-3-lines">
+                <a href="#">
+                  <h2 class="mt-6 lg:mt-0 text-lg lg:text-xl text-pri-100 font-semibold">Selamat Datang di Sekolah Kami</h2>
+                </a>  
+                <p class="mt-2 mb-4 text-gray-700 text-sm truncate-3-lines">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati omnis quam quia consectetur. Nobis culpa error, in aperiam asperiores at quae. Perspiciatis numquam praesentium molestiae, a illo corrupti voluptate eum!
                   Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.
-                  </p>
-                  <a class="text-sm text-gray-700 hover:text-pri-200" href="#">Read More</a>
+                </p>
+                <a class="text-sm text-gray-700 hover:text-pri-200" href="#">Read More</a>
               </div>
             </div>
             <div class="flex relative flex-shrink-0 min-w-0 break-words bg-pri-100 w-full mb-8 shadow-xl">
               <div class="">
                 <div class="p-8 flex-auto text-white">
-                  <h6 class="mb-6 text-xl font-semibold">Acara yang Akan Datang</h6>
+                  <h2 class="mb-6 text-xl font-semibold">Acara yang Akan Datang</h2>
                   <div>
                     <ul class="mt-5">
                       <li class="mt-6">
-                        <h5 class="text-md font-semibold">Perayaan HUT ke 150 Tahun</h5>
+                        <a href="#">
+                          <h5 class="text-md font-semibold capitalize">Perayaan HUT ke 150 Tahun</h5>
+                        </a>
                         <div class="mt-1 flex items-center text-sm opacity-75">
                           <span>
                             <i class="far fa-clock"></i>
@@ -214,7 +202,9 @@
                         <a href="#" class="w-auto text-center text-sm bg-transparent hover:bg-pri-200 text-white font-semibold hover:text-white p-2 border border-white hover:border-transparent rounded inline-block mt-4 cursor-pointer">Selengkapnya</a>
                       </li>
                       <li class="mt-6">
-                        <h5 class="text-md font-semibold">Perayaan HUT ke 150 Tahun</h5>
+                        <a href="#">
+                          <h5 class="text-md font-semibold capitalize">Perayaan HUT ke 150 Tahun</h5>
+                        </a>
                         <div class="mt-1 flex items-center text-sm opacity-75">
                           <span>
                             <i class="far fa-clock"></i>
@@ -300,7 +290,7 @@
                   </a>
                 </div>
                 <div class="pt-6 text-center">
-                  <h5 class="text-lg text-gray-900 font-semibold">Praktek IPA</h5>
+                  <h5 class="text-lg text-gray-900 font-semibold capitalize">Praktek IPA</h5>
                 </div>
               </div>
               <div class="max-w-sm lg:max-w-xl sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
@@ -311,7 +301,7 @@
                   </a>
                 </div>
                 <div class="pt-6 text-center">
-                  <h5 class="text-lg text-gray-900 font-semibold">Menanam Pohon</h5>
+                  <h5 class="text-lg text-gray-900 font-semibold capitalize">Menanam Pohon</h5>
                 </div>
               </div>
               <div class="max-w-sm lg:max-w-xl sm:w-1/2 lg:w-1/3 py-6 px-4" data-aos="flip-right">
@@ -322,7 +312,7 @@
                   </a>
                 </div>
                 <div class="pt-6 text-center">
-                  <h5 class="text-lg text-gray-900 font-semibold">Lomba Baca Al Kitab</h5>
+                  <h5 class="text-lg text-gray-900 font-semibold capitalize">Lomba Baca Al Kitab</h5>
                 </div>
               </div>
             </div>

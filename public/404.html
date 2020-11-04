@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found - SD Marsudirini Gedangan</title>
+    <title>404 Not Found</title>
     <link rel="shortcut icon" href="Assets/img/logo.png" type="image/x-icon">
     <link rel="icon" href="Assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Assets/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="Assets/glide/glide.core.min.css">
-    <link rel="stylesheet" href="Assets/glide/glide.theme.min.css">
-    <link rel="stylesheet" href="Assets/aos/aos.css">
 </head>
-<body class="antialiased bg-white font-body">
+<body class="antialiased bg-gray-200 font-body">
     <!-- Navbar -->
     <header class="fixed bg-transparent top-0 z-50 w-full text-white" id="navbar">
-        <div x-data="{ open: false }" class="flex flex-col max-w-screen-2xl px-4 mx-auto md:px-8 lg:mx-10 lg:items-center lg:justify-between lg:flex-row lg:px-12 xl:px-16">
+        <div class="container mx-auto max-w-screen-xl">
+          <div x-data="{ open: false }" class="flex flex-col px-4 md:px-8 xl:mx-10 lg:px-12 xl:px-16 lg:items-center lg:justify-between lg:flex-row">
             <div class="relative flex flex-row items-center justify-between">
-                <div id="logo-nav" class="w-20 md:w-32 lg:w-24 xl:w-32 top-0 bg-white rounded-b-xl shadow-xl">
+                <div id="logo-nav" class="w-24 md:w-32 top-0 bg-white rounded-b-xl shadow-xl">
                     <a href="index.html">
                         <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
                     </a>
+                </div>
+                <div id="nama-sekolah" class="hidden lg:relative xl:-ml-10 lg:-ml-2 text-left leading-tight absolute ml-20">
+                    <h1 class="tracking-wider lg:tracking-wider text-md font-bold uppercase">SD Marsudirini</h1>
+                    <span class="text-sm lg:text-md font-semibold">Gedangan Semarang</span>
                 </div>
                 <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -31,22 +33,22 @@
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" id="nav" class="hidden flex-col flex-grow bg-pri-100 py-2 lg:py-0 rounded-lg lg:shadow-none lg:bg-transparent lg:pb-0 lg:flex lg:justify-end lg:flex-row mt-2 lg:-mr-4 lg:m-0 mb-4 mx-1"> 
                 <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
-                    <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
-                        <span>Profil Sekolah</span>
-                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                    <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
-                        class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
-                        <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+                  <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                      <span>Profil Sekolah</span>
+                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                      class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                      <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Sejarah</a></li>
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Visi & Misi</a></li>
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Mars Sekolah</a></li>
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Guru & Karyawan</a></li>
-                        </ul>
-                    </div>
-                </div>  
-                <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">Fasilitas</a>
-                <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                      </ul>
+                  </div>
+              </div>  
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="gallery.html">Fasilitas</a>
+              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
                 <button @click="open = !open" class="flex flex-row items-center mt-2 w-full px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
                     <span>Akademik</span>
                     <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -54,47 +56,81 @@
                 <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
                     class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
                     <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Kurikulum</a></li>
-                        <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Materi Pelajaran</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Kurikulum</a></li>
+                      <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Materi Pelajaran</a></li>
                     </ul>
                 </div>
-                </div>  
-                <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
-                    <button @click="open = !open" class="flex flex-row items-center w-full mt-2 px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
-                        <span>Kegiatan</span>
-                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                    <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
-                        class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
-                        <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
+              </div>  
+              <div @click.away="open = false" class="relative my-auto" x-data="{ open: false }">
+                  <button @click="open = !open" class="flex flex-row items-center w-full mt-2 px-4 py-2 text-sm font-semibold text-left bg-transparent lg:mt-0 lg:w-auto lg:inline hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none">
+                      <span>Kegiatan</span>
+                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-in-out duration-100" x-transition:enter-start="transform lg:scale-95 -translate-y-5 opacity-0" x-transition:enter-end="transform opacity-100 lg:scale-100" x-transition:leave="transition ease-out duration-100" x-transition:leave-end="opacity-0 transform -translate-y-3"
+                      class=" block lg:absolute right-0 w-full lg:mt-5 origin-top-right lg:w-48">
+                      <ul class="px-2 lg:px-0 py-2 text-white lg:text-white bg-blue-800 lg:bg-pri-100 lg:rounded-md lg:shadow-md" id="sub-menu">
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Ekstrakurikuler</a></li>
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Retret</a></li>
                         <li class="ml-4 lg:m-0 py-2 lg:p-0"><a class="lg:block px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 lg:hover:text-gray-900 lg:focus:text-gray-900 lg:hover:bg-pri-200 lg:focus:bg-pri-200 focus:text-pri-200 focus:outline-none" href="#">Outing Class</a></li>
-                        </ul>
-                    </div>
-                </div>  
-                <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">PSB</a>
-                <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Alumni</a>
+                      </ul>
+                  </div>
+              </div>  
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="pages.html">PSB</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold lg:mt-0 hover:text-pri-200 active:text-pri-200 focus:text-pri-200 focus:outline-none" href="#">Alumni</a>
             </nav>
+          </div>
         </div>
     </header>
+    <!-- End Navbar -->
 
+    <main>
+    <!-- Breadcumb Section -->
+        <!-- <section style="background-image: url('https://www.teachforamerica.org/sites/default/files/styles/landscape_large/public/2020-06/200605_TopStory_FutureEd3.jpg'); transform: translateZ(-1px); overflow:hidden"
+            class="breadcumb relative bg-blue-500 bg-center lg:bg-fixed bg-cover bg-no-repeat overflow-x-hidden flex justify-center items-center">
+            <span class="absolute w-auto inset-0 shadow-inner bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
+            <div class="container absolute my-auto flex flex-wrap justify-center">
+                    <div class="w-full mx-auto lg:px-16 xl:px-40 2xl:px-64" data-aos="fade-up">
+                        <h1 class="text-white font-bold text-center capitalize text-4xl lg:text-5xl lg:mt-10 leading-tight">
+                            outing class
+                        </h1>
+                        <hr class="mt-2 pt-1 lg:mt-4 w-16 bg-white mx-auto">
+                    </div>
+            </div>
+        </section>  -->
+    <!-- End of Breadcumb -->
+    <div class="flex items-center justify-center h-screen overflow-hidden w-auto">
+        <span class="absolute top-0 bg-gradient-to-b from-pri-100 h-32 w-full"></span>
+        <div class="container lg:px-32 px-16 flex flex-col md:flex-row items-center justify-center text-gray-700">
+                <div class="w-full">
+                    <img class="w" src="Assets/img/404.svg" alt="">
+                </div>
+                <div class="w-full lg:pl-10 pt-10">
+                    <p class="text-2xl md:text-3xl font-semibold leading-normal mb-8 capitalize">Maaf halaman yang kamu inginkan tidak ada. </p>
+                    <p class="mb-8">But dont worry, you can find plenty of other things on our homepage.</p>
+                    <button class="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-blue bg-pri-100 active:bg-pri-100 hover:bg-pri-200">
+                        Back to Home
+                    </button>
+                <div>
+        </div>
+    </div>
+      
+    </main>
 
     <!-- Start Footer -->
-    <footer class="relative  bg-pri-100 text-white text-md lg:text-sm px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 pt-16 pb-10">
-        <div class="flex flex-col sm:flex-row sm:flex-wrap justify-between pl-4 lg:pl-0 lg:pr-0">
+    <footer class="relative bg-pri-100 text-white text-md lg:text-sm px-4 sm:px-8 lg:px-12 xl:px-40 pt-16 pb-10">
+        <div class="container mx-auto max-screen-xl flex flex-col sm:flex-row sm:flex-wrap justify-between pl-4 lg:px-0">
             <div class="sm:w-1/2 lg:w-1/5">
                 <h5 class="uppercase tracking-wider font-semibold">Profil Sekolah</h5>
                 <ul class="mt-4">
-                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Sejarah</a></li>
-                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Visi & Misi</a></li>
-                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Mars Lagu Sekolah</a></li>
-                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Guru & Karyawan</a></li>
-                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Fasilitas</a></li>
-                    <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Kegiatan Sekolah</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Sejarah</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Visi & Misi</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Mars Lagu Sekolah</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Guru & Karyawan</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Fasilitas</a></li>
+                  <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Kegiatan Sekolah</a></li>
                 </ul>
             </div>
-    
+  
             <div class="w-full mt-8 sm:w-1/2 sm:mt-0 lg:w-1/5 lg:mt-0">
                 <h5 class="uppercase tracking-wider font-semibold">Useful Link</h5>
                 <ul class="mt-4">
@@ -104,7 +140,7 @@
                     <li class="mt-2"><a href="#" title="" class="opacity-75 hover:opacity-100">Alumni</a></li>
                 </ul>
             </div>
-    
+  
             <div class="w-full mt-8 sm:w-1/2 sm:mt-12 lg:w-1/5 lg:mt-0 lg:-ml-8">
                 <h5 class="uppercase tracking-wider font-semibold">Contact Details</h5>
                 <ul class="mt-4">
@@ -131,17 +167,17 @@
                     <li class="mt-4">
                         <div class="flex items-center opacity-75 hover:opacity-100">
                         <span>
-                            <i class="fas fa-fax text-lg"></i>
+                          <i class="fas fa-fax text-lg"></i>
                         </span>
                         <span class="ml-3">
                             (024) 355-8695
                         </span>
-                        </div>
+                      </div>
                     </li>
                     <li class="mt-4">
                         <a href="mailto:cs@sdmarsudirini.sch.id" title="email" target="_blank" class="flex items-center opacity-75 hover:opacity-100">
                         <span>
-                            <i class="fas fa-envelope text-lg"></i>
+                          <i class="fas fa-envelope text-lg"></i>
                         </span>
                         <span class="ml-3">
                             cs@sdmarsudirini.sch.id
@@ -150,7 +186,7 @@
                     </li>
                 </ul>
             </div>
-    
+  
             <div class="w-full mt-8 sm:w-1/2 sm:mt-12 lg:w-1/5 lg:mt-0 -ml-2 lg:ml-0">
                 <div class="grid justify-center md:justify-start lg:justify-center grid-col-1 lg:-mr-8">
                     <div class=""><img class="w-40 lg:w-32" src="assets/img/logo.png" alt=""></div>
@@ -158,19 +194,19 @@
                         <ul class="mt-8 flex">
                             <li>
                                 <a href="#" target="_blank" title="">
-                                    <i class="flex fab fa-facebook text-2xl hover:text-pri-200"></i>
+                                  <i class="flex fab fa-facebook text-2xl hover:text-pri-200"></i>
                                 </a>
                             </li>
                 
                             <li class="ml-6">
-                                <a href="#" target="_blank" title="">
+                              <a href="#" target="_blank" title="">
                                 <i class="flex fab fa-instagram text-2xl hover:text-pri-200"></i>
-                                </a>
+                              </a>
                             </li>
-    
+  
                             <li class="ml-6">
                                 <a href="https://www.youtube.com/channel/UCIPeGDRLls32PhqBGxfbHng" target="_blank" title="Official Youtube">
-                                    <i class="flex fab fa-youtube text-2xl hover:text-pri-200"></i>
+                                  <i class="flex fab fa-youtube text-2xl hover:text-pri-200"></i>
                                 </a>
                             </li>
                         </ul>
@@ -186,26 +222,7 @@
     <!-- end footer -->
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script src="Assets/aos/aos.js"></script>
-    <script src="Assets/glide/glide.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>     
     <script src="main.js"></script>
-    <script>
-        new Glide(".glide", {
-            type: 'slider',
-            autoplay: 6000,
-            hoverpause: true,
-            gap: 0,
-            perView: 1,
-            bound: true,
-            animationDuration: 1000,
-        }).mount();
-
-        AOS.init({
-            delay: 100,
-            duration: 1200,
-            once: false,
-        });
-    </script>
 </body>
 </html>
