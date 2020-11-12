@@ -22510,6 +22510,10 @@ video {
   -webkit-box-orient: vertical;
 }
 
+body {
+  background-color: #F0F8FF;
+}
+
 .cover {
   border-bottom-left-radius: 130px;
 }

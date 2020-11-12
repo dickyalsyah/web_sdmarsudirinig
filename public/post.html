@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Assets/fontawesome-free/css/all.min.css">
 </head>
-<body class="antialiased bg-white font-body">
+<body class="antialiased font-body">
     <!-- Navbar -->
     <header class="fixed bg-transparent top-0 z-50 w-full text-white" id="navbar">
         <div class="container mx-auto max-w-screen-xl">
           <div x-data="{ open: false }" class="flex flex-col px-4 md:px-8 xl:mx-10 lg:px-12 xl:px-16 lg:items-center lg:justify-between lg:flex-row">
             <div class="relative flex flex-row items-center justify-between">
-                <div id="logo-nav" class="w-24 md:w-32 top-0 bg-white rounded-b-xl shadow-xl">
+                <div id="logo-nav" class="w-24 md:w-32 top-0">
                     <a href="index.html">
                         <img id="img-logo" class="w-auto lg:p-3 p-2" src="Assets/img/logo.png">
                     </a>
@@ -84,13 +84,14 @@
     <!-- End Navbar -->
 
     <main>
-    <!-- Breadcumb Section -->
+    <!-- Breadcumb -->
         <section style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'); transform: translateZ(-1px); overflow:hidden"
             class="breadcumb relative bg-blue-500 bg-center lg:bg-fixed bg-cover bg-no-repeat overflow-x-hidden flex justify-center items-center">
             <span class="absolute w-auto inset-0 shadow-inner bg-gradient-to-bl from-pri-100 via-pri-200 to-teal-500 opacity-75"></span>
         </section> 
     <!-- End of Breadcumb -->
 
+    <!-- Content -->
         <section class="container relative mx-auto bg-white lg:flex flex-wrap xl:py-20 md:py-12">
             <div class="flex justify-center mx-5 lg:hidden">
                 <div class="bg-white w-full h-64 md:-mt-32 sm:-mt-32 -mt-20"></div>
@@ -108,9 +109,6 @@
                                 <p>November 22, 2020</p>
                                 </span>
                             </div>
-                            <!-- <p href="#" class="text-sm pb-3  text-gray-800">
-                                Published on April 25th, 2020
-                            </p> -->
                             <nav class="pb-5">
                                 <ul class="flex items-center text-sm flex-wrap">
                                     <li class="pb-1">
@@ -149,8 +147,8 @@
                     </div>
                     </div>
                 </div>
-                <div class="xl:mr-32 pb-16">
-                    <div class="w-full bg-white flex flex-col my-2 lg:my-10 xl:my-4 xl:pl-3 lg:pl-10">
+                <div class="xl:mr-24 pb-16">
+                    <div class="w-full bg-white flex flex-col my-2 lg:mt-24 xl:my-0 xl:pl-3 lg:pl-10">
                         <hr class="border-1 my-10 lg:hidden">
                         <div class="relative flex items-center mb-5">
                             <input type="search" placeholder="Search" class="bg-white h-10 w-full px-5 pr-10 border-2 rounded-full text-sm focus:outline-none focus:shadow-sm">
@@ -159,17 +157,17 @@
                             </button>
                         </div>
                         <div class="pt-5 flex flex-col justify-start">
-                            <h3 class="pb-2 text-sm font-semibold text-pri-100 capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3>
+                            <a class="hover:text-pri-200 text-pri-100 text-sm pb-2 font-semibold" href="#"><h3 class="capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3></a>
                             <p class="text-sm text-gray-600 truncate-3-lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
                             <hr class="border-1 mt-5 block">
                         </div>
                         <div class="pt-5 flex flex-col justify-start">
-                            <h3 class="pb-2 text-sm font-semibold text-pri-100 capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3>
+                            <a class="hover:text-pri-200 text-pri-100 text-sm pb-2 font-semibold" href="#"><h3 class="capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3></a>
                             <p class="text-sm text-gray-600 truncate-3-lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
                             <hr class="border-1 mt-5 block">
                         </div>
                         <div class="pt-5 flex flex-col justify-start">
-                            <h3 class="pb-2 text-sm font-semibold text-pri-100 capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3>
+                            <a class="hover:text-pri-200 text-pri-100 text-sm pb-2 font-semibold" href="#"><h3 class="capitalize">Perayaan HUT ke 150 Tahun Marsudirini</h3></a>
                             <p class="text-sm text-gray-600 truncate-3-lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
                             <hr class="border-1 mt-5 block">
                         </div>
@@ -214,7 +212,8 @@
                     </div>
                 </div>   
             </div>
-        </section>      
+        </section>  
+    <!-- End of Content -->
     </main>
 
     <!-- Start Footer -->

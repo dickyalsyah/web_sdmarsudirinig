@@ -4,6 +4,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+body {
+    background-color: #F0F8FF;
+}
+
 .cover {
     border-bottom-left-radius: 130px;
 }
