@@ -38,7 +38,9 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [
+  plugins:
+  [
     require('tailwindcss-truncate-multiline')(['responsive', 'hover']),
+    require('@tailwindcss/typography'),
   ],
 }
