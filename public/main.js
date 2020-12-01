@@ -13,11 +13,12 @@ $(function () {
         navigation.removeClass("text-white");
         nav.removeClass("bg-pri-100")
         // logoShape.removeClass("bg-white shadow-xl");
+        logoShape.removeClass("md:w-24");
         imgLogo.addClass("w-16 py-2");
         imgLogo.removeClass("w-auto p-2 lg:p-3");
         subMenu.removeClass("bg-blue-800");
         subMenu.addClass("text-pri-100");
-        namaSekolah.addClass("block")
+        namaSekolah.addClass("block lg:ml-2")
         namaSekolah.removeClass("hidden")
         } else {
         navigation.addClass("text-white");
@@ -26,6 +27,7 @@ $(function () {
         imgLogo.removeClass("w-16 py-2");
         imgLogo.addClass("w-auto p-2 lg:p-3");
         // logoShape.addClass("bg-white shadow-xl rounded-b-xl");
+        logoShape.addClass("md:w-24");
         subMenu.addClass("bg-blue-800");
         subMenu.removeClass("text-pri-100");
         namaSekolah.removeClass("block");
